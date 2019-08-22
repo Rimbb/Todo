@@ -1,0 +1,27 @@
+#!/bin/bash
+echo "
+         {
+      {   }
+       }_{ __{
+    .-{   }   }-.
+   (   }     {   )
+   |'-.._____..-'|
+   |             :--.     
+   |            (__  |           
+   |             | )  )        -> Grab a coffee, it's loading. 
+   |             |/  /
+   |             /  /   
+   |            (  /
+   |             y'
+    '-.._____..-' ''
+
+"
+
+echo -n "Locating \"Todo\" folder "; while true;do echo -n .;sleep 1;done &
+cd $(find ~/ -name "Todo")/.execute
+kill $!; trap 'kill $!' SIGTERM
+echo done
+
+open MySQL_START;
+open NpmRunWatch_START;
+open PhpArtisanServe_START;

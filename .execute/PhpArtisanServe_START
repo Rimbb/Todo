@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo -n "Paying the Artisan "; while true;do echo -n .;sleep 1;done &
+cd $(find ~/ -name "Todo")/server;
+kill $!; trap 'kill $!' SIGTERM
+echo done
+
+php artisan serve

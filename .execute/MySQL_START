@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -d "/usr/local/Cellar/mysql@5.7" ]; then
+
+/usr/local/Cellar/mysql@5.7/5.7.27/bin/mysql -u root
+
+else 
+
+mysql -u root
+
+fi;
