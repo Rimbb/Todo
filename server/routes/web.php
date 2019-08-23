@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+// Route to handle page reload in Vue except for api routes
+Route::get('/{vue_capture?}', function (){
     return view('welcome');
-});
+})->where('vue_capture', '[\/\w\.-]*');

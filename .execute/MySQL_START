@@ -1,10 +1,12 @@
 #!/bin/bash
 if [ -d "/usr/local/Cellar/mysql@5.7" ]; then
 
+/usr/local/Cellar/mysql@5.7/5.7.27/bin/mysql.server start
 /usr/local/Cellar/mysql@5.7/5.7.27/bin/mysql -u root
 
 else 
 
+mysql.server start
 mysql -u root
 
 fi;

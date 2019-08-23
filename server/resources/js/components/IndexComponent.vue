@@ -1,27 +1,19 @@
 <template>
-  <div>
-    <h1>Posts</h1>
-
-    <div class="row">
-      <div class="col-md-10"></div>
-
-      <div class="col-md-2">
-        <router-link :to="{ name: 'create' }" class="btn btn-primary">Create</router-link>
-      </div>
-    </div>
-    <br />
-
-    <div class="card" style="width: 18rem;" v-for="post in posts" :key="post.id">
-      <div class="card-body">
-        <h2 class="card-title">{{ post.title }}</h2>
-
-        <h6 class="card-subtitle mb-2 text-muted">Id: {{ post.id }}</h6>
-
-        <p class="card-text">Description : {{ post.body }}</p>
-
-        <router-link :to="{name: 'edit', params: { id: post.id }}" class="btn btn-primary">Edit</router-link>
-
-        <button class="btn btn-danger" @click.prevent="deletePost(post.id)">Delete</button>
+  <div class="container">
+    <div class="text-center justify-content-center">
+      <div style="height: auto; display: flex;" class="card card-default card-body">
+        <h1>Your Todo List :</h1>
+        <br>
+        <div style="margin-bottom: 0.25rem;" class="card" v-for="post in posts" :key="post.id">
+          <div style="background : rgba(192,192,192,0.1);" class="card-body">
+            <h2 class="card-title"><b>{{ post.title }}</b></h2>
+            <p class="card-text"><i>{{ post.body }}</i></p>
+            <router-link :to="{name: 'edit', params: { id: post.id }}" class="btn btn-primary">Edit</router-link>
+            <button class="btn btn-danger" @click.prevent="deletePost(post.id)">Delete</button>
+          </div>
+        </div>
+        <br>
+        <router-link :to="{ name: 'create' }" style="width: 45vw; align-self:center;" class="btn btn-success">Add more</router-link>
       </div>
     </div>
   </div>
