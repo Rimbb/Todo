@@ -3311,7 +3311,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         success: function success() {
           // handle redirection
-          var redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : 'dashboard';
+          var redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'welcome' : 'welcome';
           this.$router.push({
             name: redirectTo
           });
@@ -56511,11 +56511,7 @@ var config = {
     redirect: '/',
     makeRequest: true
   },
-  fetchData: {
-    url: 'api/auth/user',
-    method: 'GET',
-    enabled: true
-  },
+  // fetchData: {url: 'api/auth/user', method: 'GET', enabled: true},
   refreshData: {
     url: 'api/auth/refresh',
     method: 'GET',
